@@ -63,6 +63,7 @@ st.write("Enter patient data below to predict the likelihood of diabetes.")
 
 # Sidebar Info
 st.sidebar.header("ℹ️ About")
+st.sidebar.write("GlucoPredict")
 st.sidebar.write("Uses a Random Forest model to predict diabetes.")
 
 # Input Form
