@@ -46,6 +46,7 @@ if df is None or rf_model is None:
 # Extract feature names (excluding the target variable 'Outcome')
 feature_names = df.drop(columns=['Outcome']).columns.tolist()
 
+# Function to predict diabetes outcome
 def predict_outcome(model, input_data):
     """Make a prediction given user input."""
     input_df = pd.DataFrame([input_data])
@@ -69,7 +70,22 @@ input_values = {}
 # Dynamic user inputs with feature names
 for i, feature in enumerate(feature_names):
     col = col1 if i % 2 == 0 else col2
-    input_values[feature] = col.number_input(f"{feature}", value=float(df[feature].mean()))
+    # Provide a default value for DiabetesPedigreeFunction if the user doesn't have it
+    if feature == "DiabetesPedigreeFunction":
+        # Default to the mean or zero if the user doesn't enter a value
+        default_value = df[feature].mean()  # or use 0 for a default value
+        input_values[feature] = col.number_input(f"{feature} (optional)", value=float(default_value))
+    else:
+        input_values[feature] = col.number_input(f"{feature}", value=float(df[feature].mean()))
+
+# Add Family History Checkbox
+family_history = st.radio("Do you have a family history of diabetes?", ('No', 'Yes'))
+
+# Adjust DiabetesPedigreeFunction based on family history
+if family_history == 'Yes':
+    input_values['DiabetesPedigreeFunction'] = 0.5  # Set to a specific value for family history
+else:
+    input_values['DiabetesPedigreeFunction'] = 0  # If no family history, set to 0
 
 # Predict button with better UI
 if st.button("🔍 Predict Diabetes Outcome", use_container_width=True):
