@@ -7,8 +7,8 @@ import joblib
 st.set_page_config(page_title="Diabetes Risk Prediction App", layout="wide")
 
 # Correct file paths using raw string literals (r"...")
-DATA_URL = r"C:\Users\u-art\OneDrive\Desktop\diabetes project\resampled_diabetes_data.csv"
-MODEL_PATH = r"C:\Users\u-art\OneDrive\Desktop\diabetes project\trained_rf_model.pkl"
+DATA_URL = r"https://raw.githubusercontent.com/cashbooda/diabetes-ml-project/refs/heads/main/resampled_diabetes_data.csv"
+MODEL_PATH = r"https://raw.githubusercontent.com/cashbooda/diabetes-ml-project/refs/heads/main/PROJECT.ipynb"
 
 # Debugging: Print paths to verify correctness
 st.write(f"Data path: {DATA_URL}")
