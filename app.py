@@ -106,4 +106,4 @@ if st.button("🔍 Predict Diabetes Outcome", use_container_width=True):
 # Footer Information
 st.write("---")
 st.write("👨‍⚕️ **Disclaimer:** This prediction is based on machine learning and should not replace professional medical advice.")
-st.write("📅 **Last Updated:** March 2025")
+st.write("📅 **Last Updated:** March 2025 - By Krish Jain")
