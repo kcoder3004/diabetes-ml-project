@@ -10,7 +10,7 @@ st.set_page_config(page_title="Diabetes Risk Prediction App", layout="wide")
 
 # Correct data & model paths
 DATA_URL = "https://raw.githubusercontent.com/cashbooda/diabetes-ml-project/main/resampled_diabetes_data.csv"
-MODEL_URL = "https://raw.githubusercontent.com/cashbooda/diabetes-ml-project/main/trained_rf_model.pkl"
+MODEL_URL = "https://raw.githubusercontent.com/cashbooda/diabetes-ml-project/main/stacked_model.pkl"
 
 # Function to load dataset
 @st.cache_data
